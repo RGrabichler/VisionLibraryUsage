@@ -3,8 +3,9 @@
   <POU Name="MainStation" Id="{133c6404-7ee3-4d52-81ac-dadf34168d5f}" SpecialFunc="None">
     <Declaration><![CDATA[FUNCTION_BLOCK MainStation EXTENDS TcoCore.TcoObject
 VAR
-    counter          : INT;
-	
+    counter : INT;
+
+    _IvController : IVController;
 END_VAR
 ]]></Declaration>
     <Implementation>
@@ -15,8 +16,10 @@ IF (THIS^.counter MOD 13 = 0) THEN
 END_IF
 
 IF (THIS^.counter MOD 400 = 0) THEN
-	THIS^.Messenger.Error('ich Poste').Pin();
-END_IF]]></ST>
+    THIS^.Messenger.Error('ich Poste').Pin();
+END_IF
+
+_IvController();]]></ST>
     </Implementation>
   </POU>
 </TcPlcObject>

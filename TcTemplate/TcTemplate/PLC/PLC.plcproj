@@ -23,6 +23,24 @@
     <Author>RG</Author>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="DUTs\StatusCam.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\WcState.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="DUTs\InfoData.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IV3\ProcessData1.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IV3\stProcessData.TcDUT">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="IV3\IVController.TcPOU">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -39,10 +57,15 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
+    <Folder Include="IV3" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
   <ItemGroup>
+    <PlaceholderReference Include="Tc2_EtherCAT">
+      <DefaultResolution>Tc2_EtherCAT, * (Beckhoff Automation GmbH)</DefaultResolution>
+      <Namespace>Tc2_EtherCAT</Namespace>
+    </PlaceholderReference>
     <PlaceholderReference Include="Tc2_Standard">
       <DefaultResolution>Tc2_Standard, * (Beckhoff Automation GmbH)</DefaultResolution>
       <Namespace>Tc2_Standard</Namespace>
@@ -56,41 +79,41 @@
       <Namespace>Tc3_Module</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="TcoCore">
-      <DefaultResolution>TcoCore, 0.11.0.2 (Vortex.Library)</DefaultResolution>
+      <DefaultResolution>TcoCore, 0.11.0.12 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoCore</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="TcoData">
-      <DefaultResolution>TcoData, 0.11.0.2 (Vortex.Library)</DefaultResolution>
+      <DefaultResolution>TcoData, 0.11.0.12 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoData</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="TcoDrivesBeckhoff">
-      <DefaultResolution>TcoDrivesBeckhoff, 0.11.0.2 (Vortex.Library)</DefaultResolution>
+      <DefaultResolution>TcoDrivesBeckhoff, 0.11.0.12 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoDrivesBeckhoff</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="TcoElements">
-      <DefaultResolution>TcoElements, 0.11.0.2 (Vortex.Library)</DefaultResolution>
+      <DefaultResolution>TcoElements, 0.11.0.12 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoElements</Namespace>
     </PlaceholderReference>
     <PlaceholderReference Include="TcoPneumatics">
-      <DefaultResolution>TcoPneumatics, 0.11.0.2 (Vortex.Library)</DefaultResolution>
+      <DefaultResolution>TcoPneumatics, 0.11.0.12 (Vortex.Library)</DefaultResolution>
       <Namespace>TcoPneumatics</Namespace>
     </PlaceholderReference>
   </ItemGroup>
   <ItemGroup>
     <PlaceholderResolution Include="TcoCore">
-      <Resolution>TcoCore, 0.11.0.2 (Vortex.Library)</Resolution>
+      <Resolution>TcoCore, 0.11.0.12 (Vortex.Library)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcoData">
-      <Resolution>TcoData, 0.11.0.2 (Vortex.Library)</Resolution>
+      <Resolution>TcoData, 0.11.0.12 (Vortex.Library)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcoDrivesBeckhoff">
-      <Resolution>TcoDrivesBeckhoff, 0.11.0.2 (Vortex.Library)</Resolution>
+      <Resolution>TcoDrivesBeckhoff, 0.11.0.12 (Vortex.Library)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcoElements">
-      <Resolution>TcoElements, 0.11.0.2 (Vortex.Library)</Resolution>
+      <Resolution>TcoElements, 0.11.0.12 (Vortex.Library)</Resolution>
     </PlaceholderResolution>
     <PlaceholderResolution Include="TcoPneumatics">
-      <Resolution>TcoPneumatics, 0.11.0.2 (Vortex.Library)</Resolution>
+      <Resolution>TcoPneumatics, 0.11.0.12 (Vortex.Library)</Resolution>
     </PlaceholderResolution>
   </ItemGroup>
   <ItemGroup>

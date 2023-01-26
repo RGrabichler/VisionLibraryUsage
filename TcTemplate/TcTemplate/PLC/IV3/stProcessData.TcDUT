@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <DUT Name="stProcessData" Id="{08b3c8b4-f8e7-4e20-b4bd-2587c397574c}">
+    <Declaration><![CDATA[TYPE
+    stProcessData :
+    STRUCT
+        Bit0                      : BIT;
+        ProgramChangeRequest      : BIT;
+        Trigger                   : BIT;
+        MasterRegistrationRequest : BIT;
+        MemoryStopSdCardRequest   : BIT;
+        ResetStatistics           : BIT;
+        ResetError                : BIT;
+        Bit7                      : BIT;
+        Bit8                      : BIT;
+        Bit9                      : BIT;
+        Bit10                     : BIT;
+        Bit11                     : BIT;
+        Bit12                     : BIT;
+        Bit13                     : BIT;
+        Bit14                     : BIT;
+        Bit15                     : BIT;
+
+    END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

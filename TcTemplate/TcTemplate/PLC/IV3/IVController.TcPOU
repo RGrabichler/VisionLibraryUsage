@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1" ProductVersion="3.1.4024.12">
+  <POU Name="IVController" Id="{fe008e94-684c-4663-a099-492675947df8}" SpecialFunc="None">
+    <Declaration><![CDATA[FUNCTION_BLOCK IVController
+VAR
+    inputRequest1  AT %Q* : ProcessData1;
+    inputResponse1 AT %I* : ProcessData1;
+    statusOfSystem AT %I* : StatusCam;
+    _trigger              : BOOL;
+END_VAR
+VAR
+    InfoData AT %I* : InfoData;
+    WcState  AT %I* : WcState;
+END_VAR
+
+VAR
+    _fb_coe_write       : FB_EcCoESdoWrite; // Function Block for writing in CoE
+    _fb_coe_read        : FB_EcCoESdoRead;  // Function Block for reading from CoE
+    userNetId           : T_AmsNetId;       // Have to be entered
+    _startWrite         : BOOL := FALSE;    // Sign for start writing
+    _startRead          : BOOL := FALSE;    // Sign for start reading
+    _nState             : BYTE := 0;        // RW-status
+    _int16Buffer        : INT;              // Buffer for reading
+    _uint16Buffer       : UINT := 22;       // Buffer for writing
+    _bTxPDOState AT %I* : BOOL;             // (PDO for synchronization)
+
+    _index    : UINT := 16#1008;
+    _subIndex : BYTE := 0;
+    _result   : STRING;
+END_VAR]]></Declaration>
+    <Implementation>
+      <ST><![CDATA[IF _trigger THEN
+    inputRequest1.stProcessData.Trigger := TRUE;
+
+    IF inputResponse1.stProcessData.Trigger THEN
+        _trigger                            := FALSE;
+        inputRequest1.stProcessData.Trigger := FALSE;
+    end_if
+END_IF
+
+userNetId := Tc2_System.F_CreateAmsNetId(infodata.AdsAddr.netId);
+
+CASE _nState OF
+    0:
+        IF _startWrite THEN
+            // Prepare CoE-Access: Write value of CoE object/ sub index:
+            _fb_coe_write(bExecute := FALSE);
+            _nState     := 1; // Next state for writing
+            _startWrite := FALSE;
+        END_IF
+
+IF _startRead THEN
+    // Prepare CoE-Access: Read value of CoE object/ sub index:
+    CoeReadString(_index := _index, _subIndex := _subIndex, _result => _result);
+END_IF
+// ============== COE WRITE ================
+//    1:
+// Write entry
+//        _fb_coe_write
+//        (
+//            sNetId       := userNetId
+//            , nSlaveAddr := InfoData.AdsAddr.port
+//            , nSubIndex  := 16#16
+//            , nIndex     := 16#8000
+//            , pSrcBuf    := ADR(_uint16Buffer)
+//            , cbBufLen   := 2
+//            , bExecute   := TRUE
+//            , tTimeout   := T#1S
+//        );
+
+//        _nState := _nState + 1; // Next state
+//    2:
+//        _fb_coe_write(); // Execute CoE write until done
+
+//        IF _fb_coe_write.bError THEN
+//            _nState := 100; // Error case
+//        ELSE
+//            IF NOT _fb_coe_write.bBusy THEN
+//                _nState := 0; // Done
+//            END_IF
+//        END_IF
+// ============== COE READ =================
+//    11:
+        // Read entry
+        _fb_coe_read
+        (
+            sNetId       := userNetId
+            , nSlaveAddr := InfoData.AdsAddr.port
+            , nSubIndex  := _subIndex
+            , nIndex     := _index
+            , pDstBuf    := ADR(_stringBuffer)
+            , cbBufLen   := 12
+            , bExecute   := TRUE
+            , tTimeout   := T#1S
+        );
+
+        _nState := _nState + 1; // Next state
+    12:
+        _fb_coe_read(); // Execute CoE read until done
+
+        IF _fb_coe_read.bError THEN
+            _nState := 100; // Error case
+        ELSE
+            IF NOT _fb_coe_read.bBusy THEN
+                _nState := 0; // Done
+                _fb_coe_read(bExecute := FALSE);
+            END_IF
+        END_IF
+    100:
+        ; // Error handling..
+END_CASE]]></ST>
+    </Implementation>
+    <Method Name="CoeReadString" Id="{606533e4-95ef-4d2f-875f-216f57b356b2}">
+      <Declaration><![CDATA[METHOD CoeReadString : STRING
+VAR_INST
+    _stringBuffer : STRING;
+END_VAR
+VAR_INPUT
+    _index    : UINT;
+    _subIndex : BYTE;
+END_VAR
+VAR_OUTPUT
+    _result : STRING;
+END_VAR]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE _nState OF
+    0:
+
+        // Prepare CoE-Access: Read value of CoE object/ sub index:
+        _fb_coe_read(bExecute := TRUE);
+        _nState := 11; // Next state for reading
+
+    // ============== COE WRITE ================
+    1:
+
+    // ============== COE READ =================
+    11:
+        // Read entry
+        _fb_coe_read
+        (
+            sNetId       := userNetId
+            , nSlaveAddr := InfoData.AdsAddr.port
+            , nSubIndex  := _subIndex
+            , nIndex     := _index
+            , pDstBuf    := ADR(_stringBuffer)
+            , cbBufLen   := 12
+            , bExecute   := TRUE
+            , tTimeout   := T#1S
+        );
+
+        _nState := _nState + 1; // Next state
+    12:
+        _fb_coe_read(); // Execute CoE read until done
+
+        IF _fb_coe_read.bError THEN
+            _nState := 100; // Error case
+        ELSE
+            IF NOT _fb_coe_read.bBusy THEN
+                _nState := 0; // Done
+                _fb_coe_read(bExecute := FALSE);
+                _startRead := FALSE;
+            END_IF
+        END_IF
+    100:
+        ; // Error handling..
+END_CASE]]></ST>
+      </Implementation>
+    </Method>
+  </POU>
+</TcPlcObject>

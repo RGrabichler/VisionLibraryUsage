@@ -1,7 +1,256 @@
 <?xml version="1.0"?>
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35">
-	<Project ProjectGUID="{261B02D7-EB78-4A5A-87D3-99C4DB7F0452}" TargetNetId="192.168.4.1.1.1" Target64Bit="true" ShowHideConfigurations="#x346">
+	<DataTypes>
+		<DataType>
+			<Name GUID="{912A2B93-8D20-004D-D8CF-6951FC47CA19}" AutoDeleteType="true">stProcessData</Name>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ProgramChangeRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Trigger</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MasterRegistrationRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>MemoryStopSdCardRequest</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ResetStatistics</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ResetError</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{2B46D565-4DFA-489A-4CF9-4DBE87177C72}" AutoDeleteType="true">ProcessData1</Name>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>stProcessData</Name>
+				<Type GUID="{912A2B93-8D20-004D-D8CF-6951FC47CA19}">stProcessData</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ProcessData1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{7E76982A-68D8-634A-BC3F-FC129A28F6D0}" AutoDeleteType="true">StatusCam</Name>
+			<BitSize>48</BitSize>
+			<SubItem>
+				<Name>Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Warning</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CurrentValueProperty</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
+				<BitSize>8</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ErrorId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>32</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000041}" TcBaseType="true" HideSubItems="true" CName="AmsNetId">AMSNETID</Name>
+			<BitSize>48</BitSize>
+			<BaseType GUID="{18071995-0000-0000-0000-000000000001}">BYTE</BaseType>
+			<ArrayInfo>
+				<LBound>0</LBound>
+				<Elements>6</Elements>
+			</ArrayInfo>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d</Printf>
+				<Parameter>[0]</Parameter>
+				<Parameter>[1]</Parameter>
+				<Parameter>[2]</Parameter>
+				<Parameter>[3]</Parameter>
+				<Parameter>[4]</Parameter>
+				<Parameter>[5]</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{18071995-0000-0000-0000-000000000042}" TcBaseType="true" CName="AmsAddr">AMSADDR</Name>
+			<BitSize>64</BitSize>
+			<SubItem>
+				<Name>netId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000041}">AMSNETID</Type>
+				<BitSize>48</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>port</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000004}">WORD</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>48</BitOffs>
+			</SubItem>
+			<Format>
+				<Printf>%d.%d.%d.%d.%d.%d:%d</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+			<Format Name="Iec">
+				<Printf>(netId:=[%d.%d.%d.%d.%d.%d], port :=%d)</Printf>
+				<Parameter>.netId[0]</Parameter>
+				<Parameter>.netId[1]</Parameter>
+				<Parameter>.netId[2]</Parameter>
+				<Parameter>.netId[3]</Parameter>
+				<Parameter>.netId[4]</Parameter>
+				<Parameter>.netId[5]</Parameter>
+				<Parameter>.port</Parameter>
+			</Format>
+		</DataType>
+		<DataType>
+			<Name GUID="{7BF8E175-404D-CB32-97D8-32EF17668198}" AutoDeleteType="true">InfoData</Name>
+			<BitSize>160</BitSize>
+			<SubItem>
+				<Name>State</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<Comment><![CDATA[ 0 valid]]></Comment>
+				<BitSize>16</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>AdsAddr</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000042}">AMSADDR</Type>
+				<BitSize>64</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DcOutputShift</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>96</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>DcInputShift</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000009}">DINT</Type>
+				<BitSize>32</BitSize>
+				<BitOffs>128</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{BFEDB9D9-D865-CC25-CA90-FB9907467CF1}" AutoDeleteType="true">WcState</Name>
+			<BitSize>8</BitSize>
+			<SubItem>
+				<Name>WcState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[ 0 valid]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InputToggle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+		</DataType>
+	</DataTypes>
+	<Project ProjectGUID="{261B02D7-EB78-4A5A-87D3-99C4DB7F0452}" TargetNetId="192.168.1.8.1.1" Target64Bit="true" ShowHideConfigurations="#x346">
 		<System>
+			<Settings MaxCpus="4" NonWinCpus="1">
+				<Cpu CpuId="3"/>
+			</Settings>
 			<Tasks>
 				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
@@ -10,9 +259,57 @@
 		</System>
 		<Plc>
 			<Project GUID="{F0BAB1E7-B207-4D97-B1F2-FE3D9803120C}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcHash="{18AE471D-0497-5BBC-21E4-2B8E855F9CEB}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{7602A4A3-8434-2F3F-F3D1-BD3FA7B63CF1}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
+					<Vars VarGrpType="1">
+						<Name>PlcTask Inputs</Name>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.inputResponse1</Name>
+							<Type GUID="{2B46D565-4DFA-489A-4CF9-4DBE87177C72}">ProcessData1</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.statusOfSystem</Name>
+							<Type GUID="{7E76982A-68D8-634A-BC3F-FC129A28F6D0}">StatusCam</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InfoData</Name>
+							<Type GUID="{7BF8E175-404D-CB32-97D8-32EF17668198}">InfoData</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.WcState</Name>
+							<Type GUID="{BFEDB9D9-D865-CC25-CA90-FB9907467CF1}">WcState</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController._bTxPDOState</Name>
+							<Comment><![CDATA[ (PDO for synchronization)]]></Comment>
+							<Type>BOOL</Type>
+						</Var>
+					</Vars>
+					<Vars VarGrpType="2" AreaNo="1">
+						<Name>PlcTask Outputs</Name>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.inputRequest1</Name>
+							<Type GUID="{2B46D565-4DFA-489A-4CF9-4DBE87177C72}">ProcessData1</Type>
+						</Var>
+					</Vars>
+					<UnrestoredVarLinks ImportTime="2023-01-25T14:31:13">
+						<OwnerA Name="InputDst" Prefix="TIPC^PLC^PLC Instance" Type="1">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._statusCam.CurrentValueProperty" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Status of System^Current Value Property" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._statusCam.Error" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Status of System^Error Status" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._statusCam.ErrorId" TypeA="UINT" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000005}" VarB="Status of System^Error Code" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._statusCam.Warning" TypeA="BOOL" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000030}" VarB="Status of System^Warning Status" Size="1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2023-01-25T14:54:23">
+						<OwnerA Name="OutputSrc" Prefix="TIPC^PLC^PLC Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._IvController.inputRequest1^InputRequest1" TypeA="DWORD" InOutA="1" ParentTypeA="uInputRequest" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="Input Request 1^Request 1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
@@ -30,5 +327,28 @@
 				</Instance>
 			</Project>
 		</Plc>
+		<Io>
+			<Device File="Device 2 (EtherCAT).xti" Id="2"/>
+		</Io>
 	</Project>
+	<Mappings>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500810000403}" Id="#x02030010"/>
+		<MappingInfo Identifier="{00000000-2001-0850-0020-500821000403}" Id="#x02030020"/>
+		<OwnerA Name="TIPC^PLC^PLC Instance">
+			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^AdsAddr" VarB="InfoData^AdsAddr"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^DcInputShift" VarB="InfoData^DcInputShift"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^DcOutputShift" VarB="InfoData^DcOutputShift"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^State" VarB="InfoData^State"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^InputToggle" VarB="WcState^InputToggle"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^WcState" VarB="WcState^WcState"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.inputResponse1^ProcessData1" VarB="Input Response 1^Response 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^CurrentValueProperty" VarB="Status of System^Current Value Property"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Error" VarB="Status of System^Error Status"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^ErrorId" VarB="Status of System^Error Code"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Warning" VarB="Status of System^Warning Status"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.inputRequest1^ProcessData1" VarB="Input Request 1^Request 1"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmProject>
