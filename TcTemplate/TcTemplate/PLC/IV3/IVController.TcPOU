@@ -7,6 +7,8 @@ VAR
     inputResponse1 AT %I* : ProcessData1;
     statusOfSystem AT %I* : StatusCam;
     _trigger              : BOOL;
+    _readString           : BOOL;
+    _readDeviceInfo       : BOOL;
 END_VAR
 VAR
     InfoData AT %I* : InfoData;
@@ -23,11 +25,21 @@ VAR
     _int16Buffer        : INT;              // Buffer for reading
     _uint16Buffer       : UINT := 22;       // Buffer for writing
     _bTxPDOState AT %I* : BOOL;             // (PDO for synchronization)
+    AdsErrId            : UDINT;
+    CANopenErrId        : UDINT;
 
-    _index    : UINT := 16#1008;
-    _subIndex : BYTE := 0;
-    _result   : STRING;
-END_VAR]]></Declaration>
+    _index             : UINT := 16#1008;
+    _subIndex          : BYTE := 0;
+    _result            : STRING;
+    _stringBuffer      : STRING;
+    _numberBuffer      : UDINT;
+    _exe               : BOOL;
+    _generalDeviceInfo : GeneralDeviceInformation;
+    _IdentityCoe       : IdentityCoe;
+    _coordinates       : Coordinates;
+    _readCoordinates   : BOOL;
+END_VAR
+]]></Declaration>
     <Implementation>
       <ST><![CDATA[IF _trigger THEN
     inputRequest1.stProcessData.Trigger := TRUE;
@@ -40,129 +52,258 @@ END_IF
 
 userNetId := Tc2_System.F_CreateAmsNetId(infodata.AdsAddr.netId);
 
-CASE _nState OF
-    0:
-        IF _startWrite THEN
-            // Prepare CoE-Access: Write value of CoE object/ sub index:
-            _fb_coe_write(bExecute := FALSE);
-            _nState     := 1; // Next state for writing
-            _startWrite := FALSE;
-        END_IF
-
-IF _startRead THEN
-    // Prepare CoE-Access: Read value of CoE object/ sub index:
-    CoeReadString(_index := _index, _subIndex := _subIndex, _result => _result);
+IF _readString THEN
+    _stringBuffer := CoeReadString(_index := _index, _subIndex := _subIndex);
 END_IF
-// ============== COE WRITE ================
-//    1:
-// Write entry
-//        _fb_coe_write
-//        (
-//            sNetId       := userNetId
-//            , nSlaveAddr := InfoData.AdsAddr.port
-//            , nSubIndex  := 16#16
-//            , nIndex     := 16#8000
-//            , pSrcBuf    := ADR(_uint16Buffer)
-//            , cbBufLen   := 2
-//            , bExecute   := TRUE
-//            , tTimeout   := T#1S
-//        );
 
-//        _nState := _nState + 1; // Next state
-//    2:
-//        _fb_coe_write(); // Execute CoE write until done
+IF _readDeviceInfo THEN
 
-//        IF _fb_coe_write.bError THEN
-//            _nState := 100; // Error case
-//        ELSE
-//            IF NOT _fb_coe_write.bBusy THEN
-//                _nState := 0; // Done
-//            END_IF
-//        END_IF
-// ============== COE READ =================
-//    11:
-        // Read entry
-        _fb_coe_read
+    IF GeneralDeviceInfo() THEN
+        _readDeviceInfo := false;
+    END_IF
+END_IF
+
+CoeReadIdentity();
+
+IF _readCoordinates THEN
+    IF CoeReadCoordinates() THEN
+        _readCoordinates := FALSE;
+    END_IF
+
+END_IF
+]]></ST>
+    </Implementation>
+    <Folder Name="CoeActions" Id="{1a3a42f9-6ee0-40e3-b164-d0a1d9218ddf}" />
+    <Method Name="CoeReadCoordinates" Id="{f40c82fa-d496-4376-832a-992a794686e2}">
+      <Declaration><![CDATA[METHOD CoeReadCoordinates : BOOL
+VAR_INST
+    step : UINT := 1;
+
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE step OF
+    1:
+        CoeReadCoordinates := FALSE;
+        step               := 10;
+    10:
+        _coordinates.xValue := CoeReadUDINT
         (
-            sNetId       := userNetId
-            , nSlaveAddr := InfoData.AdsAddr.port
-            , nSubIndex  := _subIndex
-            , nIndex     := _index
-            , pDstBuf    := ADR(_stringBuffer)
-            , cbBufLen   := 12
-            , bExecute   := TRUE
-            , tTimeout   := T#1S
+            _index      := 16#8015
+            , _subIndex := 16#11
         );
 
-        _nState := _nState + 1; // Next state
-    12:
-        _fb_coe_read(); // Execute CoE read until done
-
-        IF _fb_coe_read.bError THEN
-            _nState := 100; // Error case
-        ELSE
-            IF NOT _fb_coe_read.bBusy THEN
-                _nState := 0; // Done
-                _fb_coe_read(bExecute := FALSE);
-            END_IF
+        IF NOT _fb_coe_read.bBusy THEN
+            step := 20;
         END_IF
-    100:
-        ; // Error handling..
+    20:
+        _coordinates.yValue := CoeReadUDINT
+        (
+            _index      := 16#8015
+            , _subIndex := 16#12
+        );
+
+        IF NOT _fb_coe_read.bBusy THEN
+            step := 40;
+        END_IF
+    40:
+        _coordinates.angleValue := CoeReadUDINT
+        (
+            _index      := 16#8015
+            , _subIndex := 16#13
+        );
+
+        IF NOT _fb_coe_read.bBusy THEN
+            step               := 1;
+            CoeReadCoordinates := TRUE;
+        END_IF
 END_CASE]]></ST>
-    </Implementation>
-    <Method Name="CoeReadString" Id="{606533e4-95ef-4d2f-875f-216f57b356b2}">
-      <Declaration><![CDATA[METHOD CoeReadString : STRING
+      </Implementation>
+    </Method>
+    <Method Name="CoeReadIdentity" Id="{c7eb3a96-f07b-4390-8e80-9ae055189873}" FolderPath="CoeActions\">
+      <Declaration><![CDATA[METHOD CoeReadIdentity : UDINT
 VAR_INST
-    _stringBuffer : STRING;
+    _fb_coe_read_ext   : Tc2_EtherCAT.FB_EcCoESdoReadEx;
+    _timeout           : TIME := DEFAULT_ADS_TIMEOUT;
+    _identityCoeToSwap : IdentityCoe;
+
+    i     : UINT;
+    _test : STRING;
 END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+// Read entry
+_fb_coe_read_ext
+(
+    sNetId            := userNetId
+    , nSlaveAddr      := InfoData.AdsAddr.port
+    , nSubIndex       := 0
+    , nIndex          := 16#1018
+    , pDstBuf         := ADR(_identityCoeToSwap)
+    , cbBufLen        := 32
+    , bExecute        := true
+    , tTimeout        := _timeout
+    , bCompleteAccess := TRUE
+);
+
+IF _fb_coe_read.bError THEN
+    _nState := 100; // Error case
+ELSE
+
+    IF NOT _fb_coe_read.bBusy THEN
+        _IdentityCoe.ProductKey   := SHR(_identityCoeToSwap.ProductKey, 16);
+        _IdentityCoe.VendorId     := SHR(_identityCoeToSwap.VendorId, 16);
+        _IdentityCoe.Revision     := SHR(_identityCoeToSwap.Revision, 16);
+        _IdentityCoe.SerialNumber := SHR(_identityCoeToSwap.SerialNumber, 16);
+        _fb_coe_read(bExecute := FALSE);
+        _readString := false;
+    END_IF
+
+END_IF
+]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CoeReadString" Id="{606533e4-95ef-4d2f-875f-216f57b356b2}" FolderPath="CoeActions\">
+      <Declaration><![CDATA[METHOD CoeReadString : STRING
+//VAR_INST
+//    _stringBuffer : STRING;
+//END_VAR
 VAR_INPUT
     _index    : UINT;
     _subIndex : BYTE;
 END_VAR
-VAR_OUTPUT
-    _result : STRING;
-END_VAR]]></Declaration>
+]]></Declaration>
       <Implementation>
-        <ST><![CDATA[CASE _nState OF
-    0:
+        <ST><![CDATA[
+// Read entry
+_fb_coe_read
+(
+    sNetId       := userNetId
+    , nSlaveAddr := InfoData.AdsAddr.port
+    //    , nSlaveAddr := 1001
+    , nSubIndex := _subIndex
+    , nIndex    := _index
+    , pDstBuf   := ADR(_stringBuffer)
+    , cbBufLen  := 12
+    , bExecute  := true
+    , tTimeout  := T#1S
+);
 
-        // Prepare CoE-Access: Read value of CoE object/ sub index:
-        _fb_coe_read(bExecute := TRUE);
-        _nState := 11; // Next state for reading
+IF _fb_coe_read.bError THEN
+    AdsErrId := _fb_coe_read.nErrId;
+ELSE
+    IF NOT _fb_coe_read.bBusy THEN
+        _fb_coe_read(bExecute := FALSE);
+        _readString := false;
+    END_IF
+END_IF
 
-    // ============== COE WRITE ================
+CoeReadString := _stringBuffer;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="CoeReadUDINT" Id="{b0ff3618-3656-4acd-9fa0-c2d775da4f39}" FolderPath="CoeActions\">
+      <Declaration><![CDATA[METHOD CoeReadUDINT : UDINT
+//VAR_INST
+//    _stringBuffer : STRING;
+//END_VAR
+VAR_INPUT
+    _index    : UINT;
+    _subIndex : BYTE;
+END_VAR
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[
+// Read entry
+_fb_coe_read
+(
+    sNetId       := userNetId
+    , nSlaveAddr := InfoData.AdsAddr.port
+    //    , nSlaveAddr := 1001
+    , nSubIndex := _subIndex
+    , nIndex    := _index
+    , pDstBuf   := ADR(_numberBuffer)
+    , cbBufLen  := 32
+    , bExecute  := true
+    , tTimeout  := T#1S
+);
+
+IF _fb_coe_read.bError THEN
+    _nState := 100; // Error case
+ELSE
+    IF NOT _fb_coe_read.bBusy THEN
+        _fb_coe_read(bExecute := FALSE);
+        _readString := false;
+    END_IF
+END_IF
+
+CoeReadUDINT := _numberBuffer;]]></ST>
+      </Implementation>
+    </Method>
+    <Method Name="GeneralDeviceInfo" Id="{71ed06fb-4056-430e-b650-3eb8d00d0129}">
+      <Declaration><![CDATA[METHOD PRIVATE GeneralDeviceInfo : BOOL;
+VAR_INST
+    step : UINT := 1;
+
+END_VAR
+
+]]></Declaration>
+      <Implementation>
+        <ST><![CDATA[CASE step OF
     1:
-
-    // ============== COE READ =================
-    11:
-        // Read entry
-        _fb_coe_read
+        GeneralDeviceInfo := FALSE;
+        step              := 10;
+    10:
+        _generalDeviceInfo.DeviceName := CoeReadString
         (
-            sNetId       := userNetId
-            , nSlaveAddr := InfoData.AdsAddr.port
-            , nSubIndex  := _subIndex
-            , nIndex     := _index
-            , pDstBuf    := ADR(_stringBuffer)
-            , cbBufLen   := 12
-            , bExecute   := TRUE
-            , tTimeout   := T#1S
+            _index      := 16#1008
+            , _subIndex := 0
         );
 
-        _nState := _nState + 1; // Next state
-    12:
-        _fb_coe_read(); // Execute CoE read until done
-
-        IF _fb_coe_read.bError THEN
-            _nState := 100; // Error case
-        ELSE
-            IF NOT _fb_coe_read.bBusy THEN
-                _nState := 0; // Done
-                _fb_coe_read(bExecute := FALSE);
-                _startRead := FALSE;
-            END_IF
+        IF NOT _fb_coe_read.bBusy THEN
+            step := 20;
         END_IF
-    100:
-        ; // Error handling..
+    20:
+        step := 25;
+    25:
+        _generalDeviceInfo.HardwareVersion := CoeReadString
+        (
+            _index      := 16#1009
+            , _subIndex := 0
+        );
+
+        IF NOT _fb_coe_read.bBusy THEN
+            step := 30;
+        END_IF
+    30:
+        step := 35;
+    35:
+        _generalDeviceInfo.DeviceType := CoeReadUDINT
+        (
+            _index      := 16#1000
+            , _subIndex := 0
+        );
+
+        IF NOT _fb_coe_read.bBusy THEN
+            step := 40;
+        END_IF
+    40:
+        GeneralDeviceInfo := FALSE;
+        step              := 45;
+    45:
+        _generalDeviceInfo.SoftwareVersion := CoeReadString
+        (
+            _index      := 16#100A
+            , _subIndex := 0
+        );
+
+        IF NOT _fb_coe_read.bBusy THEN
+            step              := 1;
+            GeneralDeviceInfo := TRUE;
+        END_IF
+
 END_CASE]]></ST>
       </Implementation>
     </Method>

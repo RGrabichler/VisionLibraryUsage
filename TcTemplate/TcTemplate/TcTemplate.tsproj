@@ -259,7 +259,7 @@
 		</System>
 		<Plc>
 			<Project GUID="{F0BAB1E7-B207-4D97-B1F2-FE3D9803120C}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{7602A4A3-8434-2F3F-F3D1-BD3FA7B63CF1}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{F387E713-0AB3-338E-6068-58A530D5C99C}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
@@ -342,12 +342,6 @@
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^State" VarB="InfoData^State"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^InputToggle" VarB="WcState^InputToggle"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^WcState" VarB="WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.inputResponse1^ProcessData1" VarB="Input Response 1^Response 1"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^CurrentValueProperty" VarB="Status of System^Current Value Property"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Error" VarB="Status of System^Error Status"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^ErrorId" VarB="Status of System^Error Code"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Warning" VarB="Status of System^Warning Status"/>
-				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.inputRequest1^ProcessData1" VarB="Input Request 1^Request 1"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
