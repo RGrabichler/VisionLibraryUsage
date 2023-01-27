@@ -5,7 +5,7 @@
 VAR
     counter : INT;
 
-    _IvController : IVController;
+    _IvController : RG.IVController;
 END_VAR
 ]]></Declaration>
     <Implementation>

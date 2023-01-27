@@ -23,33 +23,6 @@
     <Author>RG</Author>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="DUTs\StatusCam.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\WcState.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="DUTs\InfoData.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IV3\DUTs\General\GeneralDeviceInformation.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IV3\DUTs\General\IdentityCoe.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IV3\DUTs\ProcessData\Coordinates.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IV3\DUTs\ProcessData\ProcessData1.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IV3\DUTs\ProcessData\stProcessData.TcDUT">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="IV3\IVController.TcPOU">
-      <SubType>Code</SubType>
-    </Compile>
     <Compile Include="PlcTask.TcTTO">
       <SubType>Code</SubType>
     </Compile>
@@ -66,10 +39,6 @@
   <ItemGroup>
     <Folder Include="DUTs" />
     <Folder Include="GVLs" />
-    <Folder Include="IV3" />
-    <Folder Include="IV3\DUTs" />
-    <Folder Include="IV3\DUTs\General" />
-    <Folder Include="IV3\DUTs\ProcessData" />
     <Folder Include="VISUs" />
     <Folder Include="POUs" />
   </ItemGroup>
@@ -136,6 +105,9 @@
   <ItemGroup>
     <LibraryReference Include="BASIC,3.31,OSCAT">
       <Namespace>BASIC</Namespace>
+    </LibraryReference>
+    <LibraryReference Include="Vision Library,0.0.0.1,Gema Technik">
+      <Namespace>RG</Namespace>
     </LibraryReference>
   </ItemGroup>
   <ProjectExtensions>

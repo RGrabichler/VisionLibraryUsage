@@ -2,7 +2,7 @@
 <TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{912A2B93-8D20-004D-D8CF-6951FC47CA19}" AutoDeleteType="true">stProcessData</Name>
+			<Name GUID="{A20CE709-8EC3-86C4-4C69-74ACB972B735}" Namespace="RG" AutoDeleteType="true">stProcessData</Name>
 			<BitSize>16</BitSize>
 			<SubItem>
 				<Name>Bit0</Name>
@@ -102,11 +102,11 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{2B46D565-4DFA-489A-4CF9-4DBE87177C72}" AutoDeleteType="true">ProcessData1</Name>
+			<Name GUID="{506E6318-6F92-08E7-37A3-0A6AA5EE6DB6}" Namespace="RG" AutoDeleteType="true">ProcessData1</Name>
 			<BitSize>32</BitSize>
 			<SubItem>
 				<Name>stProcessData</Name>
-				<Type GUID="{912A2B93-8D20-004D-D8CF-6951FC47CA19}">stProcessData</Type>
+				<Type GUID="{A20CE709-8EC3-86C4-4C69-74ACB972B735}" Namespace="RG">stProcessData</Type>
 				<BitSize>16</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
@@ -118,7 +118,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{7E76982A-68D8-634A-BC3F-FC129A28F6D0}" AutoDeleteType="true">StatusCam</Name>
+			<Name GUID="{51A7DF3C-CAEF-AD03-FF7E-8A89F0EBBFF4}" Namespace="RG" AutoDeleteType="true">StatusCam</Name>
 			<BitSize>48</BitSize>
 			<SubItem>
 				<Name>Error</Name>
@@ -200,7 +200,7 @@
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{7BF8E175-404D-CB32-97D8-32EF17668198}" AutoDeleteType="true">InfoData</Name>
+			<Name GUID="{1541AEB0-39B6-347C-0F27-CB08425E3FB5}" Namespace="RG" AutoDeleteType="true">InfoData</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>State</Name>
@@ -229,7 +229,7 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{BFEDB9D9-D865-CC25-CA90-FB9907467CF1}" AutoDeleteType="true">WcState</Name>
+			<Name GUID="{3AD94419-5B25-B63C-4D2F-3A9EC72F9857}" Namespace="RG" AutoDeleteType="true">WcState</Name>
 			<BitSize>8</BitSize>
 			<SubItem>
 				<Name>WcState</Name>
@@ -259,26 +259,26 @@
 		</System>
 		<Plc>
 			<Project GUID="{F0BAB1E7-B207-4D97-B1F2-FE3D9803120C}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{F387E713-0AB3-338E-6068-58A530D5C99C}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{C739E1EB-E6B5-8330-BF6D-EB36E6A733B8}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
 							<Name>MAIN._app._mainStation._IvController.inputResponse1</Name>
-							<Type GUID="{2B46D565-4DFA-489A-4CF9-4DBE87177C72}">ProcessData1</Type>
+							<Type GUID="{506E6318-6F92-08E7-37A3-0A6AA5EE6DB6}" Namespace="RG">ProcessData1</Type>
 						</Var>
 						<Var>
 							<Name>MAIN._app._mainStation._IvController.statusOfSystem</Name>
-							<Type GUID="{7E76982A-68D8-634A-BC3F-FC129A28F6D0}">StatusCam</Type>
+							<Type GUID="{51A7DF3C-CAEF-AD03-FF7E-8A89F0EBBFF4}" Namespace="RG">StatusCam</Type>
 						</Var>
 						<Var>
 							<Name>MAIN._app._mainStation._IvController.InfoData</Name>
-							<Type GUID="{7BF8E175-404D-CB32-97D8-32EF17668198}">InfoData</Type>
+							<Type GUID="{1541AEB0-39B6-347C-0F27-CB08425E3FB5}" Namespace="RG">InfoData</Type>
 						</Var>
 						<Var>
 							<Name>MAIN._app._mainStation._IvController.WcState</Name>
-							<Type GUID="{BFEDB9D9-D865-CC25-CA90-FB9907467CF1}">WcState</Type>
+							<Type GUID="{3AD94419-5B25-B63C-4D2F-3A9EC72F9857}" Namespace="RG">WcState</Type>
 						</Var>
 						<Var>
 							<Name>MAIN._app._mainStation._IvController._bTxPDOState</Name>
@@ -290,7 +290,7 @@
 						<Name>PlcTask Outputs</Name>
 						<Var>
 							<Name>MAIN._app._mainStation._IvController.inputRequest1</Name>
-							<Type GUID="{2B46D565-4DFA-489A-4CF9-4DBE87177C72}">ProcessData1</Type>
+							<Type GUID="{506E6318-6F92-08E7-37A3-0A6AA5EE6DB6}" Namespace="RG">ProcessData1</Type>
 						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2023-01-25T14:31:13">
@@ -342,6 +342,12 @@
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^State" VarB="InfoData^State"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^InputToggle" VarB="WcState^InputToggle"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^WcState" VarB="WcState^WcState"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.inputResponse1^ProcessData1" VarB="Input Response 1 TxPDOMap^Input Response 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^CurrentValueProperty" VarB="Status of System TxPDOMap^Current Value Property"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Error" VarB="Status of System TxPDOMap^Error Status"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^ErrorId" VarB="Status of System TxPDOMap^Error Code"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Warning" VarB="Status of System TxPDOMap^Warning Status"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.inputRequest1^ProcessData1" VarB="Input Request 1 RxPDOMap^Request 1"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
