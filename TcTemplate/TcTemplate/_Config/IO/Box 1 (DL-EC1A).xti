@@ -932,4 +932,172 @@
 			</Pdo>
 		</EtherCAT>
 	</Box>
+	<Mappings>
+		<OwnerA Name="__THIS__">
+			<OwnerB Name="TIPC^PLC^PLC Instance">
+				<Link VarA="ID01 Current Value  TxPDOMap^ID01 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="9"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="11"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="10"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="15"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="1"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="2"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="3"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="4"/>
+				<Link VarA="ID01 Status TxPDOMap^ID01 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="14"/>
+				<Link VarA="ID01 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="5"/>
+				<Link VarA="ID01 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="6"/>
+				<Link VarA="ID01 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="7"/>
+				<Link VarA="ID01 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="8"/>
+				<Link VarA="ID01 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="12"/>
+				<Link VarA="ID01 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" Size="1" OffsB="13"/>
+				<Link VarA="ID02 Current Value  TxPDOMap^ID02 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_01"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="9"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="11"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="10"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="15"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="1"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="2"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="3"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="4"/>
+				<Link VarA="ID02 Status TxPDOMap^ID02 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="14"/>
+				<Link VarA="ID02 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="5"/>
+				<Link VarA="ID02 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="6"/>
+				<Link VarA="ID02 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="7"/>
+				<Link VarA="ID02 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="8"/>
+				<Link VarA="ID02 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="12"/>
+				<Link VarA="ID02 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" Size="1" OffsB="13"/>
+				<Link VarA="ID03 Current Value  TxPDOMap^ID03 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_02"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="9"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="11"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="10"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="15"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="1"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="2"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="3"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="4"/>
+				<Link VarA="ID03 Status TxPDOMap^ID03 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="14"/>
+				<Link VarA="ID03 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="5"/>
+				<Link VarA="ID03 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="6"/>
+				<Link VarA="ID03 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="7"/>
+				<Link VarA="ID03 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="8"/>
+				<Link VarA="ID03 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="12"/>
+				<Link VarA="ID03 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" Size="1" OffsB="13"/>
+				<Link VarA="ID04 Current Value  TxPDOMap^ID04 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_03"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="9"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="11"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="10"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="15"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="1"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="2"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="3"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="4"/>
+				<Link VarA="ID04 Status TxPDOMap^ID04 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="14"/>
+				<Link VarA="ID04 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="5"/>
+				<Link VarA="ID04 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="6"/>
+				<Link VarA="ID04 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="7"/>
+				<Link VarA="ID04 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="8"/>
+				<Link VarA="ID04 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="12"/>
+				<Link VarA="ID04 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" Size="1" OffsB="13"/>
+				<Link VarA="ID05 Current Value  TxPDOMap^ID05 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_04"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="9"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="11"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="10"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="15"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="1"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="2"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="3"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="4"/>
+				<Link VarA="ID05 Status TxPDOMap^ID05 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="14"/>
+				<Link VarA="ID05 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="5"/>
+				<Link VarA="ID05 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="6"/>
+				<Link VarA="ID05 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="7"/>
+				<Link VarA="ID05 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="8"/>
+				<Link VarA="ID05 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="12"/>
+				<Link VarA="ID05 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" Size="1" OffsB="13"/>
+				<Link VarA="ID06 Current Value  TxPDOMap^ID06 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_05"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="9"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="11"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="10"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="15"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="1"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="2"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="3"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="4"/>
+				<Link VarA="ID06 Status TxPDOMap^ID06 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="14"/>
+				<Link VarA="ID06 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="5"/>
+				<Link VarA="ID06 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="6"/>
+				<Link VarA="ID06 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="7"/>
+				<Link VarA="ID06 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="8"/>
+				<Link VarA="ID06 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="12"/>
+				<Link VarA="ID06 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" Size="1" OffsB="13"/>
+				<Link VarA="ID07 Current Value  TxPDOMap^ID07 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_06"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="9"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="11"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="10"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="15"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="1"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="2"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="3"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="4"/>
+				<Link VarA="ID07 Status TxPDOMap^ID07 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="14"/>
+				<Link VarA="ID07 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="5"/>
+				<Link VarA="ID07 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="6"/>
+				<Link VarA="ID07 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="7"/>
+				<Link VarA="ID07 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="8"/>
+				<Link VarA="ID07 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="12"/>
+				<Link VarA="ID07 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" Size="1" OffsB="13"/>
+				<Link VarA="ID08 Current Value  TxPDOMap^ID08 Current Value (P.V.)" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_07"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Current Value Invalid" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="9"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Current Value Over Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="11"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Current Value Under Range" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="10"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="15"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Output 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Output 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="1"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Output 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="2"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Output 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="3"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Output 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="4"/>
+				<Link VarA="ID08 Status TxPDOMap^ID08 Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="14"/>
+				<Link VarA="ID08 Status TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="5"/>
+				<Link VarA="ID08 Status TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="6"/>
+				<Link VarA="ID08 Status TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="7"/>
+				<Link VarA="ID08 Status TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="8"/>
+				<Link VarA="ID08 Status TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="12"/>
+				<Link VarA="ID08 Status TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" Size="1" OffsB="13"/>
+				<Link VarA="InfoData^AdsAddr" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^AdsAddr"/>
+				<Link VarA="InfoData^DcInputShift" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^DcInputShift"/>
+				<Link VarA="InfoData^DcOutputShift" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^DcOutputShift"/>
+				<Link VarA="InfoData^State" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^State"/>
+				<Link VarA="Input Request 1 RxPDOMap^Request 1" VarB="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest1"/>
+				<Link VarA="Input Request 2 RxPDOMap^Request 2" VarB="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest2"/>
+				<Link VarA="Input Request 3 RxPDOMap^Request 3" VarB="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest3"/>
+				<Link VarA="Input Request 4 RxPDOMap^Request 4" VarB="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest4"/>
+				<Link VarA="Input Request 5 RxPDOMap^Request 5" VarB="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest5"/>
+				<Link VarA="Input Response 1 TxPDOMap^Input Response 1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse1"/>
+				<Link VarA="Input Response 2 TxPDOMap^Input Response 2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse2"/>
+				<Link VarA="Input Response 3 TxPDOMap^Input Response 3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse3"/>
+				<Link VarA="Input Response 4 TxPDOMap^Input Response 4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse4"/>
+				<Link VarA="Input Response 5 TxPDOMap^Input Response 5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse5"/>
+				<Link VarA="Status of System TxPDOMap^Current Value Property" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="3"/>
+				<Link VarA="Status of System TxPDOMap^Error Code" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="16" OffsB="16"/>
+				<Link VarA="Status of System TxPDOMap^Error Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem"/>
+				<Link VarA="Status of System TxPDOMap^Reserved" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="2"/>
+				<Link VarA="Status of System TxPDOMap^Reserved_1" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="4"/>
+				<Link VarA="Status of System TxPDOMap^Reserved_2" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="5"/>
+				<Link VarA="Status of System TxPDOMap^Reserved_3" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="6"/>
+				<Link VarA="Status of System TxPDOMap^Reserved_4" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="7"/>
+				<Link VarA="Status of System TxPDOMap^Reserved_5" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="8" OffsB="8"/>
+				<Link VarA="Status of System TxPDOMap^Warning Status" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" Size="1" OffsB="1"/>
+				<Link VarA="WcState^InputToggle" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^InputToggle"/>
+				<Link VarA="WcState^WcState" VarB="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^WcState"/>
+			</OwnerB>
+		</OwnerA>
+	</Mappings>
 </TcSmItem>

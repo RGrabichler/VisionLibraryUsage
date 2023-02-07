@@ -1,8 +1,74 @@
 <?xml version="1.0"?>
-<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.35">
+<TcSmProject xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.beckhoff.com/schemas/2012/07/TcSmProject" TcSmVersion="1.0" TcVersion="3.1.4024.40">
 	<DataTypes>
 		<DataType>
-			<Name GUID="{A20CE709-8EC3-86C4-4C69-74ACB972B735}" Namespace="RG" AutoDeleteType="true">stProcessData</Name>
+			<Name GUID="{FFF5B1AB-6C19-8097-CEAC-AE9484A14DCB}" Namespace="Vision_Library" AutoDeleteType="true">StatusOfSystem</Name>
+			<Comment><![CDATA[Entspricht 0x6000 in COE]]></Comment>
+			<BitSize>32</BitSize>
+			<SubItem>
+				<Name>Error</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Warning</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reserved</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>CurrentValueProperty</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reserved1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reserved2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reserved3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reserved4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Reserved5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>ErrorId</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
+				<BitSize>16</BitSize>
+				<BitOffs>16</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{7D769F09-9C3B-615D-D261-83549BDA4C4E}" Namespace="Vision_Library" AutoDeleteType="true">Iv3InputRequestResponse1</Name>
+			<Comment><![CDATA[Index0x7000   Subindex 16#1]]></Comment>
 			<BitSize>16</BitSize>
 			<SubItem>
 				<Name>Bit0</Name>
@@ -102,47 +168,424 @@
 			</SubItem>
 		</DataType>
 		<DataType>
-			<Name GUID="{506E6318-6F92-08E7-37A3-0A6AA5EE6DB6}" Namespace="RG" AutoDeleteType="true">ProcessData1</Name>
-			<BitSize>32</BitSize>
+			<Name GUID="{3FB707B3-9D23-6510-8B59-14020AAA171C}" Namespace="Vision_Library" AutoDeleteType="true">Iv3InputRequestResponse2</Name>
+			<Comment><![CDATA[Index0x7000   Subindex 16#2]]></Comment>
+			<BitSize>16</BitSize>
 			<SubItem>
-				<Name>stProcessData</Name>
-				<Type GUID="{A20CE709-8EC3-86C4-4C69-74ACB972B735}" Namespace="RG">stProcessData</Type>
-				<BitSize>16</BitSize>
+				<Name>Bit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
 				<BitOffs>0</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>ProcessData1</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000007}">DWORD</Type>
-				<BitSize>32</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-		</DataType>
-		<DataType>
-			<Name GUID="{51A7DF3C-CAEF-AD03-FF7E-8A89F0EBBFF4}" Namespace="RG" AutoDeleteType="true">StatusCam</Name>
-			<BitSize>48</BitSize>
-			<SubItem>
-				<Name>Error</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>0</BitOffs>
+				<Name>SwitchProgrammNumberBit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>Warning</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<BitSize>8</BitSize>
+				<Name>Bit2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
 				<BitOffs>8</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>CurrentValueProperty</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000030}">BOOL</Type>
-				<BitSize>8</BitSize>
-				<BitOffs>16</BitOffs>
+				<Name>Bit9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
 			</SubItem>
 			<SubItem>
-				<Name>ErrorId</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000005}">UINT</Type>
-				<BitSize>16</BitSize>
-				<BitOffs>32</BitOffs>
+				<Name>Bit10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{4AF0BC44-7760-8A66-CF7E-F1D1A14CA886}" Namespace="Vision_Library" AutoDeleteType="true">Iv3InputRequestResponse3</Name>
+			<Comment><![CDATA[Index0x7000   Subindex 16#3]]></Comment>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SwitchProgrammNumberBit1</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{80726718-904A-27EB-7A2E-A1B2F92CAAD6}" Namespace="Vision_Library" AutoDeleteType="true">Iv3InputRequestResponse4</Name>
+			<Comment><![CDATA[Index0x7000   Subindex 16#4]]></Comment>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SwitchProgrammNumberBit2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{E1E5818A-6788-EC93-EDA2-2B60DDA85979}" Namespace="Vision_Library" AutoDeleteType="true">Iv3InputRequestResponse5</Name>
+			<Comment><![CDATA[Index0x7000   Subindex 16#5]]></Comment>
+			<BitSize>16</BitSize>
+			<SubItem>
+				<Name>Bit0</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>SwitchProgrammNumberBit3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit2</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>2</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit3</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>3</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit4</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>4</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit5</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>5</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit6</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>6</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit7</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>7</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit8</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>8</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit9</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>9</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit10</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>10</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit11</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>11</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit12</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>12</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit13</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>13</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit14</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>14</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>Bit15</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>15</BitOffs>
+			</SubItem>
+		</DataType>
+		<DataType>
+			<Name GUID="{2EFFADEB-9314-D309-DCF3-B6F65DFFE78D}" Namespace="Vision_Library" AutoDeleteType="true">WcState</Name>
+			<BitSize>8</BitSize>
+			<SubItem>
+				<Name>WcState</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<Comment><![CDATA[ 0 valid]]></Comment>
+				<BitSize>1</BitSize>
+				<BitOffs>0</BitOffs>
+			</SubItem>
+			<SubItem>
+				<Name>InputToggle</Name>
+				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
+				<BitSize>1</BitSize>
+				<BitOffs>1</BitOffs>
 			</SubItem>
 		</DataType>
 		<DataType>
@@ -200,7 +643,7 @@
 			</Format>
 		</DataType>
 		<DataType>
-			<Name GUID="{1541AEB0-39B6-347C-0F27-CB08425E3FB5}" Namespace="RG" AutoDeleteType="true">InfoData</Name>
+			<Name GUID="{54EF0F96-04CB-5D05-D0A7-A1EEE6412FB2}" Namespace="Vision_Library" AutoDeleteType="true">InfoData</Name>
 			<BitSize>160</BitSize>
 			<SubItem>
 				<Name>State</Name>
@@ -228,23 +671,6 @@
 				<BitOffs>128</BitOffs>
 			</SubItem>
 		</DataType>
-		<DataType>
-			<Name GUID="{3AD94419-5B25-B63C-4D2F-3A9EC72F9857}" Namespace="RG" AutoDeleteType="true">WcState</Name>
-			<BitSize>8</BitSize>
-			<SubItem>
-				<Name>WcState</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
-				<Comment><![CDATA[ 0 valid]]></Comment>
-				<BitSize>1</BitSize>
-				<BitOffs>0</BitOffs>
-			</SubItem>
-			<SubItem>
-				<Name>InputToggle</Name>
-				<Type GUID="{18071995-0000-0000-0000-000000000010}">BIT</Type>
-				<BitSize>1</BitSize>
-				<BitOffs>1</BitOffs>
-			</SubItem>
-		</DataType>
 	</DataTypes>
 	<Project ProjectGUID="{261B02D7-EB78-4A5A-87D3-99C4DB7F0452}" TargetNetId="192.168.1.8.1.1" Target64Bit="true" ShowHideConfigurations="#x346">
 		<System>
@@ -252,45 +678,151 @@
 				<Cpu CpuId="3"/>
 			</Settings>
 			<Tasks>
-				<Task Id="3" Priority="20" CycleTime="100000" AmsPort="350" AdtTasks="true">
+				<Task Id="3" Priority="20" CycleTime="10000" AmsPort="350" AdtTasks="true">
 					<Name>PlcTask</Name>
 				</Task>
 			</Tasks>
 		</System>
 		<Plc>
 			<Project GUID="{F0BAB1E7-B207-4D97-B1F2-FE3D9803120C}" Name="PLC" PrjFilePath="PLC\PLC.plcproj" TmcFilePath="PLC\PLC.tmc" ReloadTmc="true" AmsPort="851" FileArchiveSettings="#x000e" SymbolicMapping="true">
-				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{C739E1EB-E6B5-8330-BF6D-EB36E6A733B8}">
+				<Instance Id="#x08502000" TcSmClass="TComPlcObjDef" KeepUnrestoredLinks="2" TmcPath="PLC\PLC.tmc" TmcHash="{683B9F6A-3828-CE56-3EB7-1A8DBBAD5C55}">
 					<Name>PLC Instance</Name>
 					<CLSID ClassFactory="TcPlc30">{08500001-0000-0000-F000-000000000064}</CLSID>
 					<Vars VarGrpType="1">
 						<Name>PlcTask Inputs</Name>
 						<Var>
-							<Name>MAIN._app._mainStation._IvController.inputResponse1</Name>
-							<Type GUID="{506E6318-6F92-08E7-37A3-0A6AA5EE6DB6}" Namespace="RG">ProcessData1</Type>
-						</Var>
-						<Var>
-							<Name>MAIN._app._mainStation._IvController.statusOfSystem</Name>
-							<Type GUID="{51A7DF3C-CAEF-AD03-FF7E-8A89F0EBBFF4}" Namespace="RG">StatusCam</Type>
-						</Var>
-						<Var>
-							<Name>MAIN._app._mainStation._IvController.InfoData</Name>
-							<Type GUID="{1541AEB0-39B6-347C-0F27-CB08425E3FB5}" Namespace="RG">InfoData</Type>
-						</Var>
-						<Var>
-							<Name>MAIN._app._mainStation._IvController.WcState</Name>
-							<Type GUID="{3AD94419-5B25-B63C-4D2F-3A9EC72F9857}" Namespace="RG">WcState</Type>
-						</Var>
-						<Var>
 							<Name>MAIN._app._mainStation._IvController._bTxPDOState</Name>
 							<Comment><![CDATA[ (PDO for synchronization)]]></Comment>
 							<Type>BOOL</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.StatusOfSystem</Name>
+							<Comment><![CDATA[    //Ethercat Status]]></Comment>
+							<Type GUID="{FFF5B1AB-6C19-8097-CEAC-AE9484A14DCB}" Namespace="Vision_Library">StatusOfSystem</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputResponse1</Name>
+							<Comment><![CDATA[PDO Vision Sensor   ]]></Comment>
+							<Type GUID="{7D769F09-9C3B-615D-D261-83549BDA4C4E}" Namespace="Vision_Library">Iv3InputRequestResponse1</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputResponse2</Name>
+							<Type GUID="{3FB707B3-9D23-6510-8B59-14020AAA171C}" Namespace="Vision_Library">Iv3InputRequestResponse2</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputResponse3</Name>
+							<Type GUID="{4AF0BC44-7760-8A66-CF7E-F1D1A14CA886}" Namespace="Vision_Library">Iv3InputRequestResponse3</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputResponse4</Name>
+							<Type GUID="{80726718-904A-27EB-7A2E-A1B2F92CAAD6}" Namespace="Vision_Library">Iv3InputRequestResponse4</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputResponse5</Name>
+							<Type GUID="{E1E5818A-6788-EC93-EDA2-2B60DDA85979}" Namespace="Vision_Library">Iv3InputRequestResponse5</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID01</Name>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_01</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_02</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_03</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_04</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_05</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_06</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_07</Name>
+							<Comment><![CDATA[value 0..1]]></Comment>
+							<Type>DWORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID01Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID02Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID03Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID04Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID05Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID06Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID07Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.ID08Status</Name>
+							<Type>WORD</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.WcState</Name>
+							<Comment><![CDATA[    //General Ethercat Data]]></Comment>
+							<Type GUID="{2EFFADEB-9314-D309-DCF3-B6F65DFFE78D}" Namespace="Vision_Library">WcState</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InfoData</Name>
+							<Type GUID="{54EF0F96-04CB-5D05-D0A7-A1EEE6412FB2}" Namespace="Vision_Library">InfoData</Type>
 						</Var>
 					</Vars>
 					<Vars VarGrpType="2" AreaNo="1">
 						<Name>PlcTask Outputs</Name>
 						<Var>
-							<Name>MAIN._app._mainStation._IvController.inputRequest1</Name>
-							<Type GUID="{506E6318-6F92-08E7-37A3-0A6AA5EE6DB6}" Namespace="RG">ProcessData1</Type>
+							<Name>MAIN._app._mainStation._IvController.InputRequest1</Name>
+							<Type GUID="{7D769F09-9C3B-615D-D261-83549BDA4C4E}" Namespace="Vision_Library">Iv3InputRequestResponse1</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputRequest2</Name>
+							<Type GUID="{3FB707B3-9D23-6510-8B59-14020AAA171C}" Namespace="Vision_Library">Iv3InputRequestResponse2</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputRequest3</Name>
+							<Type GUID="{4AF0BC44-7760-8A66-CF7E-F1D1A14CA886}" Namespace="Vision_Library">Iv3InputRequestResponse3</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputRequest4</Name>
+							<Type GUID="{80726718-904A-27EB-7A2E-A1B2F92CAAD6}" Namespace="Vision_Library">Iv3InputRequestResponse4</Type>
+						</Var>
+						<Var>
+							<Name>MAIN._app._mainStation._IvController.InputRequest5</Name>
+							<Type GUID="{E1E5818A-6788-EC93-EDA2-2B60DDA85979}" Namespace="Vision_Library">Iv3InputRequestResponse5</Type>
 						</Var>
 					</Vars>
 					<UnrestoredVarLinks ImportTime="2023-01-25T14:31:13">
@@ -310,6 +842,83 @@
 							</OwnerB>
 						</OwnerA>
 					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2023-01-27T11:37:10">
+						<OwnerA Name="InputDst" Prefix="TIPC^PLC^PLC Instance" Type="1">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._IvController.inputResponse1^ProcessData1" TypeA="DWORD" InOutA="0" ParentTypeA="ProcessData" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="Input Response 1 TxPDOMap^Input Response 1" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^PLC^PLC Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._IvController.Iv3InputRequestResponseData1" TypeA="RG.Iv3InputRequestResponse1" InOutA="1" GuidA="{5EC56A58-EA9D-9FA9-D30F-C00A2AE68C86}" VarB="Input Request 1 RxPDOMap^Request 1" Size="16" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2023-01-30T11:37:20">
+						<OwnerA Name="InputDst" Prefix="TIPC^PLC^PLC Instance" Type="1">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._IvController.Iv3InputResponse1" TypeA="RG.Iv3InputRequestResponse1" InOutA="0" GuidA="{953BC39F-0C2F-6D9F-9CD0-F2FF57087557}" VarB="Input Response 1 TxPDOMap^Input Response 1" Size="16" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
+					<UnrestoredVarLinks ImportTime="2023-01-30T11:39:35">
+						<OwnerA Name="InputDst" Prefix="TIPC^PLC^PLC Instance" Type="1">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Current Value Invalid" Size="1" OffsA="9" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Current Value Over Range" Size="1" OffsA="11" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Current Value Under Range" Size="1" OffsA="10" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Error Status" Size="1" OffsA="15" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Output 1" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Output 2" Size="1" OffsA="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Output 3" Size="1" OffsA="2" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Output 4" Size="1" OffsA="3" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Output 5" Size="1" OffsA="4" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^ID01 Warning Status" Size="1" OffsA="14" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^Reserved" Size="1" OffsA="5" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^Reserved_1" Size="1" OffsA="6" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^Reserved_2" Size="1" OffsA="7" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^Reserved_3" Size="1" OffsA="8" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^Reserved_4" Size="1" OffsA="12" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID01Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID01 Status TxPDOMap^Reserved_5" Size="1" OffsA="13" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Current Value Invalid" Size="1" OffsA="9" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Current Value Over Range" Size="1" OffsA="11" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Current Value Under Range" Size="1" OffsA="10" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Error Status" Size="1" OffsA="15" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Output 1" Size="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Output 2" Size="1" OffsA="1" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Output 3" Size="1" OffsA="2" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Output 4" Size="1" OffsA="3" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Output 5" Size="1" OffsA="4" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^ID02 Warning Status" Size="1" OffsA="14" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^Reserved" Size="1" OffsA="5" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^Reserved_1" Size="1" OffsA="6" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^Reserved_2" Size="1" OffsA="7" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^Reserved_3" Size="1" OffsA="8" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^Reserved_4" Size="1" OffsA="12" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02Status" TypeA="WORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000004}" VarB="ID02 Status TxPDOMap^Reserved_5" Size="1" OffsA="13" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_01" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID01 Current Value  TxPDOMap^ID01 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_02" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID02 Current Value  TxPDOMap^ID02 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_03" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID03 Current Value  TxPDOMap^ID03 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_04" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID04 Current Value  TxPDOMap^ID04 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_05" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID05 Current Value  TxPDOMap^ID05 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_06" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID06 Current Value  TxPDOMap^ID06 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.ID02_MatchingRateOfPositionAdujustmentTool_07" TypeA="DWORD" InOutA="0" GuidA="{18071995-0000-0000-0000-000000000007}" VarB="ID07 Current Value  TxPDOMap^ID07 Current Value (P.V.)" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputResponse2" TypeA="RG.Iv3InputRequestResponse2" InOutA="0" GuidA="{982B0A92-29AC-180B-D503-413ED18A450A}" VarB="Input Response 2 TxPDOMap^Input Response 2" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputResponse3" TypeA="RG.Iv3InputRequestResponse3" InOutA="0" GuidA="{CFDF5B01-A357-465A-9BC4-45285C5DC9B2}" VarB="Input Response 3 TxPDOMap^Input Response 3" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputResponse4" TypeA="RG.Iv3InputRequestResponse4" InOutA="0" GuidA="{1CB5AD67-6DAF-DB36-6F4C-15043B38B6CD}" VarB="Input Response 4 TxPDOMap^Input Response 4" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputResponse5" TypeA="RG.Iv3InputRequestResponse5" InOutA="0" GuidA="{67909DC1-AE54-5950-7DBD-1FDE5FF2A537}" VarB="Input Response 5 TxPDOMap^Input Response 5" Size="16" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+						<OwnerA Name="OutputSrc" Prefix="TIPC^PLC^PLC Instance" Type="2">
+							<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputRequest1" TypeA="RG.Iv3InputRequestResponse1" InOutA="1" GuidA="{953BC39F-0C2F-6D9F-9CD0-F2FF57087557}" VarB="Input Request 1 RxPDOMap^Request 1" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputRequest2" TypeA="RG.Iv3InputRequestResponse2" InOutA="1" GuidA="{982B0A92-29AC-180B-D503-413ED18A450A}" VarB="Input Request 2 RxPDOMap^Request 2" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputRequest3" TypeA="RG.Iv3InputRequestResponse3" InOutA="1" GuidA="{CFDF5B01-A357-465A-9BC4-45285C5DC9B2}" VarB="Input Request 3 RxPDOMap^Request 3" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputRequest4" TypeA="RG.Iv3InputRequestResponse4" InOutA="1" GuidA="{1CB5AD67-6DAF-DB36-6F4C-15043B38B6CD}" VarB="Input Request 4 RxPDOMap^Request 4" Size="16" RestoreInfo="ANotFound"/>
+								<Link VarA="MAIN._app._mainStation._IvController._triggerSensorTask.DioMapping.InputRequest5" TypeA="RG.Iv3InputRequestResponse5" InOutA="1" GuidA="{67909DC1-AE54-5950-7DBD-1FDE5FF2A537}" VarB="Input Request 5 RxPDOMap^Request 5" Size="16" RestoreInfo="ANotFound"/>
+							</OwnerB>
+						</OwnerA>
+					</UnrestoredVarLinks>
 					<Contexts>
 						<Context>
 							<Id NeedCalleeCall="true">0</Id>
@@ -318,7 +927,7 @@
 								<OTCID>#x02010030</OTCID>
 							</ManualConfig>
 							<Priority>20</Priority>
-							<CycleTime>10000000</CycleTime>
+							<CycleTime>1000000</CycleTime>
 						</Context>
 					</Contexts>
 					<TaskPouOids>
@@ -336,18 +945,168 @@
 		<MappingInfo Identifier="{00000000-2001-0850-0020-500821000403}" Id="#x02030020"/>
 		<OwnerA Name="TIPC^PLC^PLC Instance">
 			<OwnerB Name="TIID^Device 2 (EtherCAT)^Box 1 (DL-EC1A)">
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01" VarB="ID01 Current Value  TxPDOMap^ID01 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^ID01 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID01Status" VarB="ID01 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^ID02 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02Status" VarB="ID02 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_01" VarB="ID02 Current Value  TxPDOMap^ID02 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_02" VarB="ID03 Current Value  TxPDOMap^ID03 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_03" VarB="ID04 Current Value  TxPDOMap^ID04 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_04" VarB="ID05 Current Value  TxPDOMap^ID05 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_05" VarB="ID06 Current Value  TxPDOMap^ID06 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_06" VarB="ID07 Current Value  TxPDOMap^ID07 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID02_MatchingRateOfPositionAdujustmentTool_07" VarB="ID08 Current Value  TxPDOMap^ID08 Current Value (P.V.)"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^ID03 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID03Status" VarB="ID03 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^ID04 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID04Status" VarB="ID04 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^ID05 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID05Status" VarB="ID05 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^ID06 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID06Status" VarB="ID06 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^ID07 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID07Status" VarB="ID07 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Current Value Invalid" Size="1" OffsA="9"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Current Value Over Range" Size="1" OffsA="11"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Current Value Under Range" Size="1" OffsA="10"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Error Status" Size="1" OffsA="15"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Output 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Output 2" Size="1" OffsA="1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Output 3" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Output 4" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Output 5" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^ID08 Warning Status" Size="1" OffsA="14"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^Reserved" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^Reserved_1" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^Reserved_2" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^Reserved_3" Size="1" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^Reserved_4" Size="1" OffsA="12"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.ID08Status" VarB="ID08 Status TxPDOMap^Reserved_5" Size="1" OffsA="13"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^AdsAddr" VarB="InfoData^AdsAddr"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^DcInputShift" VarB="InfoData^DcInputShift"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^DcOutputShift" VarB="InfoData^DcOutputShift"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InfoData^State" VarB="InfoData^State"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse1" VarB="Input Response 1 TxPDOMap^Input Response 1"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse2" VarB="Input Response 2 TxPDOMap^Input Response 2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse3" VarB="Input Response 3 TxPDOMap^Input Response 3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse4" VarB="Input Response 4 TxPDOMap^Input Response 4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.InputResponse5" VarB="Input Response 5 TxPDOMap^Input Response 5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Current Value Property" Size="1" OffsA="3"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Error Code" Size="16" OffsA="16"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Error Status"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Reserved" Size="1" OffsA="2"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Reserved_1" Size="1" OffsA="4"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Reserved_2" Size="1" OffsA="5"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Reserved_3" Size="1" OffsA="6"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Reserved_4" Size="1" OffsA="7"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Reserved_5" Size="8" OffsA="8"/>
+				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.StatusOfSystem" VarB="Status of System TxPDOMap^Warning Status" Size="1" OffsA="1"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^InputToggle" VarB="WcState^InputToggle"/>
 				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.WcState^WcState" VarB="WcState^WcState"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.inputResponse1^ProcessData1" VarB="Input Response 1 TxPDOMap^Input Response 1"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^CurrentValueProperty" VarB="Status of System TxPDOMap^Current Value Property"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Error" VarB="Status of System TxPDOMap^Error Status"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^ErrorId" VarB="Status of System TxPDOMap^Error Code"/>
-				<Link VarA="PlcTask Inputs^MAIN._app._mainStation._IvController.statusOfSystem^Warning" VarB="Status of System TxPDOMap^Warning Status"/>
-				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.inputRequest1^ProcessData1" VarB="Input Request 1 RxPDOMap^Request 1"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest1" VarB="Input Request 1 RxPDOMap^Request 1"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest2" VarB="Input Request 2 RxPDOMap^Request 2"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest3" VarB="Input Request 3 RxPDOMap^Request 3"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest4" VarB="Input Request 4 RxPDOMap^Request 4"/>
+				<Link VarA="PlcTask Outputs^MAIN._app._mainStation._IvController.InputRequest5" VarB="Input Request 5 RxPDOMap^Request 5"/>
 			</OwnerB>
 		</OwnerA>
 	</Mappings>
